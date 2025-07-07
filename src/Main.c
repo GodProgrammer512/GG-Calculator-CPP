@@ -9,7 +9,7 @@
 int main(void)
 {
 	// Variables:
-	unsigned char loop1 = 1, loop2 = 0;
+	unsigned char loop1 = 1u, loop2 = 0u;
 	signed int precision = 6; /* Precision of the numbers. */
 	long double n1, n2, option1, option2;
 	#define CALC_VERSION 5.0L
