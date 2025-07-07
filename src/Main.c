@@ -100,8 +100,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to sum it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %s%.*Lf%s + %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, n1 + n2, BASE_TERMINAL);
+			printf("Result: %.*Lf\n", precision, n1 + n2);
 			petc();
 		}
 
@@ -109,8 +108,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to subtract it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %s%.*Lf%s - %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, n1 - n2, BASE_TERMINAL);
+			printf("Result: %.*Lf\n", precision, n1 - n2);
 			petc();
 		}
 
@@ -118,8 +116,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to multiply it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %s%.*Lf%s x %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, n1 * n2, BASE_TERMINAL);
+			printf("Result: %.*Lf\n", precision, n1 * n2);
 			petc();
 		}
 
@@ -127,7 +124,6 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to make a division: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
 
 			if(n2 == 0.0L)
 			{
@@ -146,19 +142,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to elevate the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %s%.*Lf%s ^ %s%.*Lf%s ", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL);
-
-			if(n2 == 2.0L)
-			{
-				fputs("(square)", stdout);
-			}
-			else if(n2 == 3.0L)
-			{
-				fputs("(cube)", stdout);
-			}
-
-			printf(" = %s%.*Lf%s\n", GREEN_COLOR, precision, powl(n1, n2), BASE_TERMINAL);
+			printf("Result: %.*Lf\n", precision, powl(n1, n2));
 			petc();
 		}
 
@@ -166,17 +150,16 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to root the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
 			fputs("Result: ", stdout);
 
-			if(n1 < 0)
+			if(n1 < 0.0L)
 			{
-				printf("%s%.*Lf%s √ %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, copysignl(powl(fabsl(n1), 1.0L / n2), n1), BASE_TERMINAL);
+				printf("%.*Lf\n", precision, copysignl(powl(fabsl(n1), 1.0L / n2), n1));
 			}
 
 			else
 			{
-				printf("%s%.*Lf%s √ %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, powl(n1, 1.0L / n2), BASE_TERMINAL);
+				printf("%.*Lf\n", precision, powl(n1, 1.0L / n2));
 			}
 
 			petc();
