@@ -22,12 +22,12 @@ int main(void)
 		printf("======== CALCULATOR %Lf ========\n", CALC_VERSION);
 		puts("=====================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
-		puts("  [ 1 ] Addition accounts +");
-		puts("  [ 2 ] Subtraction accounts -");
-		puts("  [ 3 ] Multiplication accounts x");
-		puts("  [ 4 ] Division accounts ÷");
-		puts("  [ 5 ] Elevation accounts ^");
-		puts("  [ 6 ] Rooted accounts √");
+		puts("  [ 1 ] Addition accounts");
+		puts("  [ 2 ] Subtraction accounts");
+		puts("  [ 3 ] Multiplication accounts");
+		puts("  [ 4 ] Division accounts");
+		puts("  [ 5 ] Elevation accounts");
+		puts("  [ 6 ] Rooted accounts");
 		fputs("\t Your answer: ", stdout);
 		scanf("%Lf", &option1);
 		clear_terminal();
@@ -136,7 +136,7 @@ int main(void)
 
 			else
 			{
-				printf("Result: %s%.*Lf%s ÷ %s%.*Lf%s = %s%.*Lf%s\n", RED_COLOR, precision, n1, BASE_TERMINAL, BLUE_COLOR, precision, n2, BASE_TERMINAL, GREEN_COLOR, precision, n1 / n2, BASE_TERMINAL);
+				printf("Result: %.*Lf\n", precision, n1 / n2);
 			}
 
 			petc();
