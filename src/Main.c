@@ -9,10 +9,14 @@
 int main(void)
 {
 	// Variables:
-	unsigned char loop1 = 1u, loop2 = 0u;
-	signed int precision = 6; /* Precision of the numbers. */
-	long double n1, n2, option1, option2;
-	#define CALC_VERSION 5.0L
+	unsigned char loop1 = 1u; // First loop variable.
+	unsigned char loop2 = 0u; // Second loop variable.
+	signed int precision = 6; // Precision variable.
+	long double n1;           // First number variable.
+	long double n2;           // Second number variable.
+	long double option1;      // First option variable. 
+	long double option2;      // Second option variable.
+	#define CALC_VERSION 5.0L // Calculator version variable.
 
 	// Main loop:
 	while(loop1)
