@@ -12,6 +12,9 @@
 int main(void)
 {
 	// Variables:
+	#define GG_CALC_VERSION  1.00L // Calculator version variable.
+	#define MIN_PRECISION 0        // Minimum precision variable.
+	#define MAX_PRECISION 18       // Maximum precision variable.
 	unsigned char loop1 = 1u;      // First loop variable.
 	unsigned char loop2 = 0u;      // Second loop variable.
 	signed int precision = 2;      // Precision variable.
@@ -19,9 +22,6 @@ int main(void)
 	long double n2;                // Second number variable.
 	long double option1;           // First option variable.
 	long double option2;           // Second option variable.
-	#define GG_CALC_VERSION  1.00L // Calculator version variable.
-	#define MIN_PRECISION 0        // Minimum precision variable.
-	#define MAX_PRECISION 18       // Maximum precision variable.
 
 	// Main loop:
 	while(loop1)
