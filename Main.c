@@ -1,5 +1,5 @@
-#ifndef _CALCULATOR_6_C_
-#define _CALCULATOR_6_C_
+#ifndef _GG_CALCULATOR_C_
+#define _GG_CALCULATOR_C_
 
 // Importations:
 #include <cutils.h>
@@ -12,23 +12,23 @@
 int main(void)
 {
 	// Variables:
-	unsigned char loop1 = 1u;   // First loop variable.
-	unsigned char loop2 = 0u;   // Second loop variable.
-	signed int precision = 2;   // Precision variable.
-	long double n1;             // First number variable.
-	long double n2;             // Second number variable.
-	long double option1;        // First option variable.
-	long double option2;        // Second option variable.
-	#define CALC_VERSION  1.01L // Calculator version variable.
-	#define MIN_PRECISION 0     // Minimum precision variable.
-	#define MAX_PRECISION 18    // Maximum precision variable.
+	unsigned char loop1 = 1u;      // First loop variable.
+	unsigned char loop2 = 0u;      // Second loop variable.
+	signed int precision = 2;      // Precision variable.
+	long double n1;                // First number variable.
+	long double n2;                // Second number variable.
+	long double option1;           // First option variable.
+	long double option2;           // Second option variable.
+	#define GG_CALC_VERSION  1.00L // Calculator version variable.
+	#define MIN_PRECISION 0        // Minimum precision variable.
+	#define MAX_PRECISION 18       // Maximum precision variable.
 
 	// Main loop:
 	while(loop1)
 	{
 		clear_terminal();
 		puts("===================================");
-		printf("========= CALCULATOR %.2Lf =========\n", CALC_VERSION);
+		printf("========= CALCULATOR %.2Lf =========\n", GG_CALC_VERSION);
 		puts("===================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
 		puts("  [ 1 ] Addition accounts +");
