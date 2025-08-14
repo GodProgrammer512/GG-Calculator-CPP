@@ -12,19 +12,19 @@
 int main(void)
 {
 	// Variables:
-	#define GG_CALC_VERSION  1.00L // Calculator version variable.
-	#define MIN_PRECISION 0        // Minimum precision variable.
-	#define MAX_PRECISION 18       // Maximum precision variable.
-	unsigned char loop1 = 1u;      // First loop variable.
-	unsigned char loop2 = 0u;      // Second loop variable.
-	signed int precision = 2;      // Precision variable.
-	long double n1;                // First number variable.
-	long double n2;                // Second number variable.
-	long double option1;           // First option variable.
-	long double option2;           // Second option variable.
+	#define GG_CALC_VERSION 1.00L // Calculator version variable.
+	#define MIN_PRECISION 0       // Minimum precision variable.
+	#define MAX_PRECISION 18      // Maximum precision variable.
+	unsigned char loop = 1u;      // Loop variable.
+	// unsigned char loop = 0u;     // Second loop variable.
+	signed int precision = 2;     // Precision variable.
+	long double n1;               // First number variable.
+	long double n2;               // Second number variable.
+	long double option1;          // First option variable.
+	long double option2;          // Second option variable.
 
 	// Main loop:
-	while(loop1)
+	while(loop == 1u)
 	{
 		clear_terminal();
 		puts("===================================");
@@ -43,10 +43,10 @@ int main(void)
 
 		if(option1 == 0.0L)
 		{
-			--loop1, ++loop2;
+			loop = 2u;
 
 			// Second main loop:
-			while(loop2)
+			while(loop == 2u)
 			{
 				puts("========================================");
 				puts("============= OPTIONS MENU =============");
@@ -60,12 +60,12 @@ int main(void)
 
 				if(option2 == 0.0L)
 				{
-					++loop1, --loop2;
+					--loop;
 				}
 
 				else if(option2 == 1.0L)
 				{
-					--loop2, clear_terminal();
+					loop = 0u, clear_terminal();
 				}
 
 				else if(option2 == 2.0L)
