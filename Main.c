@@ -1,3 +1,4 @@
+// Run once time:
 #ifndef _GG_CALCULATOR_C_
 #define _GG_CALCULATOR_C_
 
@@ -12,19 +13,18 @@
 int main(void)
 {
 	// Variables:
-	#define GG_CALC_VERSION 1.00L // Calculator version variable.
-	#define MIN_PRECISION 0       // Minimum precision variable.
-	#define MAX_PRECISION 18      // Maximum precision variable.
-	unsigned char loop = 1u;      // Loop variable.
-	// unsigned char loop = 0u;     // Second loop variable.
-	signed int precision = 2;     // Precision variable.
-	long double n1;               // First number variable.
-	long double n2;               // Second number variable.
-	long double option1;          // First option variable.
-	long double option2;          // Second option variable.
+	#define GG_CALC_V "3.0.0" // Calculator version variable.
+	#define MIN_PRECISION 0   // Minimum precision variable.
+	#define MAX_PRECISION 18  // Maximum precision variable.
+	signed char loop = 1u;    // First Loop variable.
+	signed int precision = 2; // Precision variable.
+	long double n1;           // First number variable.
+	long double n2;           // Second number variable.
+	long double option1;      // First option variable.
+	long double option2;      // Second option variable.
 
 	// Main loop:
-	while(loop == 1u)
+	while(loop1 == 1)
 	{
 		clear_terminal();
 		puts("===================================");
@@ -43,10 +43,10 @@ int main(void)
 
 		if(option1 == 0.0L)
 		{
-			loop = 2u;
+			loop1 = 2;
 
 			// Second main loop:
-			while(loop == 2u)
+			while(loop1 == 2)
 			{
 				puts("========================================");
 				puts("============= OPTIONS MENU =============");
@@ -56,25 +56,25 @@ int main(void)
 				puts("   [ 2 ] Read \"READ-ME\"");
 				printf("   [ 3 ] Change precision (actual: %d)\n", precision);
 				fputs("\t Your answer: ", stdout);
-				scanf("%Lf", &option2);
+				scanf("%Lf", &option1);
 
-				if(option2 == 0.0L)
+				if(option1 == 0.0L)
 				{
 					--loop;
 				}
 
-				else if(option2 == 1.0L)
+				else if(option1 == 1.0L)
 				{
-					loop = 0u, clear_terminal();
+					loop1 = 0, clear_terminal();
 				}
 
-				else if(option2 == 2.0L)
+				else if(option1 == 2.0L)
 				{
 					clear_terminal();
 					rrmf();
 				}
 
-				else if(option2 == 3.0L)
+				else if(option1 == 3.0L)
 				{
 					clear_terminal();
 					fputs("Type the new value to the precision (base: 2, min: 0, max: 18): ", stdout);
@@ -108,8 +108,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to sum it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %.*Lf + %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, n1 + n2);
+			printf("Result: %.*Lf\n", precision, n1 + n2);
 			petc();
 		}
 
@@ -117,7 +116,6 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to subtract it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
 			printf("Result: %.*Lf - %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, n1 - n2);
 			petc();
 		}
