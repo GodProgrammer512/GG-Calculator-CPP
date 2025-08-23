@@ -93,7 +93,7 @@ int main(void)
 					clear_terminal();
 				}
 
-				else if(option2 == 3.14L || option2 == 3.1415L)
+				else if(option1 == 3.14L || option1 == 3.1415L)
 				{
 					clear_terminal();
 					easter_egg_function();
@@ -116,7 +116,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to subtract it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf - %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, n1 - n2);
+			printf("Result: %.*Lf\n", precision, n1 - n2);
 			petc();
 		}
 
@@ -124,8 +124,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to multiply it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %.*Lf x %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, n1 * n2);
+			printf("Result: %.*Lf\n", precision, n1 * n2);
 			petc();
 		}
 
@@ -133,7 +132,6 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to make a division: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
 
 			if(n2 == 0.0L)
 			{
@@ -142,7 +140,7 @@ int main(void)
 
 			else
 			{
-				printf("Result: %.*Lf ÷ %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, n1 / n2);
+				printf("Result: %.*Lf\n", precision, n1 / n2);
 			}
 
 			petc();
@@ -152,8 +150,7 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to elevate the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
-			printf("Result: %.*Lf ^ %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, powl(n1, n2));
+			printf("Result: %.*Lf\n", precision, powl(n1, n2));
 			petc();
 		}
 
@@ -161,7 +158,6 @@ int main(void)
 		{
 			fputs("Type two numbers, both with space to root the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
-			clear_terminal();
 			printf("Result: %.*Lf √ %.*Lf = ", precision, n1, precision, n2);
 
 			if(n1 < 0.0L)
