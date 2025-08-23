@@ -1,6 +1,6 @@
 // Run once time:
-#ifndef _GG_CALCULATOR_C_
-#define _GG_CALCULATOR_C_
+#ifndef _GG_CALC_C_
+#define _GG_CALC_C_
 
 // Importations:
 #include <cutils.h>
