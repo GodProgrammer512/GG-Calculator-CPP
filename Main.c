@@ -13,23 +13,22 @@
 int main(void)
 {
 	// Variables:
-	#define GG_CALC_V "3.0.0" // Calculator version variable.
+	#define GG_CALC_V "3.0.1" // Calculator version variable.
 	#define MIN_PRECISION 0   // Minimum precision variable.
 	#define MAX_PRECISION 18  // Maximum precision variable.
-	signed char loop = 1u;    // First Loop variable.
+	signed char loop1 = 1;    // First Loop variable.
 	signed int precision = 2; // Precision variable.
 	long double n1;           // First number variable.
 	long double n2;           // Second number variable.
 	long double option1;      // First option variable.
-	long double option2;      // Second option variable.
 
 	// Main loop:
 	while(loop1 == 1)
 	{
 		clear_terminal();
-		puts("===================================");
-		printf("========= CALCULATOR %.2Lf =========\n", GG_CALC_VERSION);
-		puts("===================================");
+		puts("====================================");
+		printf("========= CALCULATOR %s =========\n", GG_CALC_V);
+		puts("====================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
 		puts("  [ 1 ] Addition accounts +");
 		puts("  [ 2 ] Subtraction accounts -");
@@ -60,7 +59,7 @@ int main(void)
 
 				if(option1 == 0.0L)
 				{
-					--loop;
+					--loop1;
 				}
 
 				else if(option1 == 1.0L)
