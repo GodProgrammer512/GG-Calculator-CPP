@@ -22,6 +22,9 @@ int main(void)
 	long double n2;           // Second number variable.
 	long double option1;      // First option variable.
 
+	// Commands before main loop:
+	enable_vt_and_utf8();
+
 	// Main loop:
 	while(loop1 == 1)
 	{
