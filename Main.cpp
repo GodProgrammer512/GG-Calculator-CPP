@@ -4,8 +4,9 @@
 
 // Importations:
 #include <cutils.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <string>
+// #include <stdlib.h>
 #include <math.h>
 
 
@@ -20,7 +21,7 @@ int main(void)
 	signed int precision = 2; // Precision variable.
 	long double n1;           // First number variable.
 	long double n2;           // Second number variable.
-	long double option1;      // First option variable.
+	std::string option1;      // First option variable.
 
 	// Commands before main loop:
 	enable_vt_and_utf8();
