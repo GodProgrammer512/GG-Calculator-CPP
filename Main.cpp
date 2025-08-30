@@ -6,7 +6,6 @@
 #include <cutils.h>
 #include <iostream>
 #include <string>
-// #include <stdlib.h>
 #include <math.h>
 
 
@@ -14,7 +13,7 @@
 int main(void)
 {
 	// Variables:
-	#define GG_CALC_V "3.0.1" // Calculator version variable.
+	#define GG_CALC_V "3.1.1" // Calculator version variable.
 	#define MIN_PRECISION 0   // Minimum precision variable.
 	#define MAX_PRECISION 18  // Maximum precision variable.
 	signed char loop1 = 1;    // First Loop variable.
@@ -41,10 +40,10 @@ int main(void)
 		puts("  [ 5 ] Elevation accounts ^");
 		puts("  [ 6 ] Rooted accounts √");
 		fputs("\t Your answer: ", stdout);
-		scanf("%Lf", &option1);
+		std::cin >> std::ws >> option1;
 		clear_terminal();
 
-		if(option1 == 0.0L)
+		if(option1 == "0")
 		{
 			loop1 = 2;
 
@@ -59,25 +58,25 @@ int main(void)
 				puts("   [ 2 ] Read \"READ-ME\"");
 				printf("   [ 3 ] Change precision (actual: %d)\n", precision);
 				fputs("\t Your answer: ", stdout);
-				scanf("%Lf", &option1);
+				std::cin >> std::ws >> option1;
 
-				if(option1 == 0.0L)
+				if(option1 == "0")
 				{
 					--loop1;
 				}
 
-				else if(option1 == 1.0L)
+				else if(option1 == "1")
 				{
 					loop1 = 0, clear_terminal();
 				}
 
-				else if(option1 == 2.0L)
+				else if(option1 == "2")
 				{
 					clear_terminal();
 					rrmf();
 				}
 
-				else if(option1 == 3.0L)
+				else if(option1 == "3")
 				{
 					clear_terminal();
 					fputs("Type the new value to the precision (base: 2, min: 0, max: 18): ", stdout);
@@ -96,7 +95,7 @@ int main(void)
 					clear_terminal();
 				}
 
-				else if(option1 == 3.14L || option1 == 3.1415L)
+				else if(option1 == "3.14" || option1 == "3.1415" || option1 == "3.14159" || option1 == "3,14" || option1 == "3,1415" || option1 == "3,14159")
 				{
 					clear_terminal();
 					easter_egg_function();
@@ -107,7 +106,7 @@ int main(void)
 			}
 		}
 
-		else if(option1 == 1.0L)
+		else if(option1 == "1")
 		{
 			fputs("Type two numbers, both with space to sum it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
@@ -115,7 +114,7 @@ int main(void)
 			petc();
 		}
 
-		else if(option1 == 2.0L)
+		else if(option1 == "2")
 		{
 			fputs("Type two numbers, both with space to subtract it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
@@ -123,7 +122,7 @@ int main(void)
 			petc();
 		}
 
-		else if(option1 == 3.0L)
+		else if(option1 == "3")
 		{
 			fputs("Type two numbers, both with space to multiply it: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
@@ -131,7 +130,7 @@ int main(void)
 			petc();
 		}
 
-		else if(option1 == 4.0L)
+		else if(option1 == "4")
 		{
 			fputs("Type two numbers, both with space to make a division: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
@@ -149,7 +148,7 @@ int main(void)
 			petc();
 		}
 
-		else if(option1 == 5.0L)
+		else if(option1 == "5")
 		{
 			fputs("Type two numbers, both with space to elevate the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
@@ -157,7 +156,7 @@ int main(void)
 			petc();
 		}
 
-		else if(option1 == 6.0L)
+		else if(option1 == "6")
 		{
 			fputs("Type two numbers, both with space to root the left number: ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
