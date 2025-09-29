@@ -1,26 +1,28 @@
 // Run once time:
-#ifndef _GG_CALC_C_
-#define _GG_CALC_C_
+#ifndef _GG_CALC_CPP_
+#define _GG_CALC_CPP_
 
 // Importations:
+#define IMPORT_TERMINAL_COLORS
 #include <cutils.h>
 #include <iostream>
 #include <string>
-#include <math.h>
+#include <cmath>
 
 
 // Main code:
 int main(void)
 {
 	// Variables:
-	#define GG_CALC_V "3.1.1" // Calculator version variable.
-	#define MIN_PRECISION 0   // Minimum precision variable.
-	#define MAX_PRECISION 18  // Maximum precision variable.
-	signed char loop1 = 1;    // First Loop variable.
-	signed int precision = 2; // Precision variable.
-	long double n1;           // First number variable.
-	long double n2;           // Second number variable.
-	std::string option1;      // First option variable.
+	#define GG_CALCULATOR_VERSION "1.0.0" // Calculator version variable.
+	#define MIN_PRECISION 0               // Minimum precision variable.
+	#define MAX_PRECISION 18              // Maximum precision variable.
+	signed char loop1 = 1;                // First Loop variable.
+	signed int precision = 2;             // Precision variable.
+	long double n1;                       // First number variable.
+	long double n2;                       // Second number variable.
+	long double result;                   // Result variable.
+	std::string option1;                  // First option variable.
 
 	// Commands before main loop:
 	enable_vt_and_utf8();
@@ -30,7 +32,7 @@ int main(void)
 	{
 		clear_terminal();
 		puts("====================================");
-		printf("========= CALCULATOR %s =========\n", GG_CALC_V);
+		printf("========= CALCULATOR %s =========\n", GG_CALCULATOR_VERSION);
 		puts("====================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
 		puts("  [ 1 ] Addition accounts +");
@@ -108,7 +110,7 @@ int main(void)
 
 		else if(option1 == "1")
 		{
-			fputs("Type two numbers, both with space to sum it: ", stdout);
+			fputs("Type two numbers, both with space to sum it (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 			printf("Result: %.*Lf\n", precision, n1 + n2);
 			petc();
@@ -116,7 +118,7 @@ int main(void)
 
 		else if(option1 == "2")
 		{
-			fputs("Type two numbers, both with space to subtract it: ", stdout);
+			fputs("Type two numbers, both with space to subtract it (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 			printf("Result: %.*Lf\n", precision, n1 - n2);
 			petc();
@@ -124,7 +126,7 @@ int main(void)
 
 		else if(option1 == "3")
 		{
-			fputs("Type two numbers, both with space to multiply it: ", stdout);
+			fputs("Type two numbers, both with space to multiply it (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 			printf("Result: %.*Lf\n", precision, n1 * n2);
 			petc();
@@ -132,7 +134,7 @@ int main(void)
 
 		else if(option1 == "4")
 		{
-			fputs("Type two numbers, both with space to make a division: ", stdout);
+			fputs("Type two numbers, both with space to make a division (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 
 			if(n2 == 0.0L)
@@ -150,7 +152,7 @@ int main(void)
 
 		else if(option1 == "5")
 		{
-			fputs("Type two numbers, both with space to elevate the left number: ", stdout);
+			fputs("Type two numbers, both with space to elevate the left number (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 			printf("Result: %.*Lf\n", precision, powl(n1, n2));
 			petc();
@@ -158,7 +160,7 @@ int main(void)
 
 		else if(option1 == "6")
 		{
-			fputs("Type two numbers, both with space to root the left number: ", stdout);
+			fputs("Type two numbers, both with space to root the left number (lr = last account result): ", stdout);
 			scanf("%Lf %Lf", &n1, &n2);
 			printf("Result: %.*Lf √ %.*Lf = ", precision, n1, precision, n2);
 
