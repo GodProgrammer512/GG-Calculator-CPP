@@ -1,2 +1,2 @@
-# Calculator-5.0-C
-A repository for my Calculator 5.0 APP in C. 👍
+# GG-Calculator-CPP
+A repository for my GG Calculator APP in C++. 👍
