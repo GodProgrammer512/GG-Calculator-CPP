@@ -4,7 +4,9 @@
 
 // Importations:
 #define IMPORT_TERMINAL_COLORS
+#define IMPORT_MATH_UTILS
 #include <cutils.h>
+#include <stdlib.h>
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -18,11 +20,14 @@ int main(void)
 	#define MIN_PRECISION 0               // Minimum precision variable.
 	#define MAX_PRECISION 18              // Maximum precision variable.
 	signed char loop1 = 1;                // First Loop variable.
-	signed int precision = 2;             // Precision variable.
+	signed int precision = 6;             // Precision variable.
 	long double n1;                       // First number variable.
 	long double n2;                       // Second number variable.
-	long double result;                   // Result variable.
+	long double result = 0.0L;            // Result variable.
 	std::string option1;                  // First option variable.
+	std::string sn1;                      // First string number variable.
+	std::string sn2;                      // Second string number variable.
+	std::string sprecision;               // String precision variable.
 
 	// Commands before main loop:
 	enable_vt_and_utf8();
@@ -52,14 +57,14 @@ int main(void)
 			// Second main loop:
 			while(loop1 == 2)
 			{
-				puts("========================================");
-				puts("============= OPTIONS MENU =============");
-				puts("========================================");
-				puts("   [ 0 ] Return");
-				printf("   %s[ 1 ] Exit...%s\n", RED_COLOR, BASE_TERMINAL);
-				puts("   [ 2 ] Read \"READ-ME\"");
-				printf("   [ 3 ] Change precision (actual: %d)\n", precision);
-				fputs("\t Your answer: ", stdout);
+				puts("=======================================");
+				puts("=============== OPTIONS ===============");
+				puts("=======================================");
+				puts("  [ 0 ] Return");
+				printf("  %s[ 1 ] Exit...%s\n", RED_COLOR, BASE_TERMINAL);
+				puts("  [ 2 ] Read \"READ-ME\"");
+				printf("  [ 3 ] Change precision (actual: %d)\n", precision);
+				fputs("\tYour answer: ", stdout);
 				std::cin >> std::ws >> option1;
 
 				if(option1 == "0")
@@ -81,8 +86,10 @@ int main(void)
 				else if(option1 == "3")
 				{
 					clear_terminal();
-					fputs("Type the new value to the precision (base: 2, min: 0, max: 18): ", stdout);
-					scanf("%d", &precision);
+					fputs("Type the new value to the precision (base: 6, min: 0, max: 18): ", stdout);
+					std::cin >> std::ws >> sprecision;
+
+					precision = atoi(sprecision.c_str());
 
 					if(precision < MIN_PRECISION)
 					{
@@ -110,41 +117,248 @@ int main(void)
 
 		else if(option1 == "1")
 		{
-			fputs("Type two numbers, both with space to sum it (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf\n", precision, n1 + n2);
+			printf("Type two numbers, both with space to sum it (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
+
+			if(sn1 == "lr")
+			{
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
+			}
+
+			else
+			{
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			result = n1 + n2;
+			printf("Result: %.*Lf + %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, result);
 			petc();
 		}
 
 		else if(option1 == "2")
 		{
-			fputs("Type two numbers, both with space to subtract it (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf\n", precision, n1 - n2);
+			printf("Type two numbers, both with space to subtract it (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
+
+			if(sn1 == "lr")
+			{
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
+			}
+
+			else
+			{
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			result = n1 - n2;
+			printf("Result: %.*Lf - %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, result);
 			petc();
 		}
 
 		else if(option1 == "3")
 		{
-			fputs("Type two numbers, both with space to multiply it (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf\n", precision, n1 * n2);
+			printf("Type two numbers, both with space to multiply it (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
+
+			if(sn1 == "lr")
+			{
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
+			}
+
+			else
+			{
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			result = n1 * n2;
+			printf("Result: %.*Lf x %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, result);
 			petc();
 		}
 
 		else if(option1 == "4")
 		{
-			fputs("Type two numbers, both with space to make a division (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
+			printf("Type two numbers, both with space to make a division (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
 
-			if(n2 == 0.0L)
+			if(sn1 == "lr")
 			{
-				printf("%sERROR...%s\n", RED_COLOR, BASE_TERMINAL);
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
 			}
 
 			else
 			{
-				printf("Result: %.*Lf\n", precision, n1 / n2);
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			if(n2 == 0.0L)
+			{
+				printf("%sERROR... The second number can't be 0...%s\n", RED_COLOR, BASE_TERMINAL);
+			}
+
+			else
+			{
+				result = n1 / n2;
+				printf("Result: %.*Lf ÷ %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, result);
 			}
 
 			petc();
@@ -152,26 +366,131 @@ int main(void)
 
 		else if(option1 == "5")
 		{
-			fputs("Type two numbers, both with space to elevate the left number (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf\n", precision, powl(n1, n2));
+			printf("Type two numbers, both with space to elevate the left number (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
+
+			if(sn1 == "lr")
+			{
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
+			}
+
+			else
+			{
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			result = powl(n1, n2);
+			printf("Result: %.*Lf ^ %.*Lf = %.*Lf\n", precision, n1, precision, n2, precision, result);
 			petc();
 		}
 
 		else if(option1 == "6")
 		{
-			fputs("Type two numbers, both with space to root the left number (lr = last account result): ", stdout);
-			scanf("%Lf %Lf", &n1, &n2);
-			printf("Result: %.*Lf √ %.*Lf = ", precision, n1, precision, n2);
+			printf("Type two numbers, both with space to root the left number (last account result, %Lf): ", result);
+			std::cin >> std::ws >> sn1 >> sn2;
 
-			if(n1 < 0.0L)
+			if(sn1 == "lr")
 			{
-				printf("%.*Lf\n", precision, copysignl(powl(fabsl(n1), 1.0L / n2), n1));
+				n1 = result;
+			}
+
+			else if(sn1 == "pi")
+			{
+				n1 = PI_S_L;
+			}
+
+			else if(sn1 == "pim")
+			{
+				n1 = PI_M_L;
+			}
+
+			else if(sn1 == "pil")
+			{
+				n1 = PI_L_L;
 			}
 
 			else
 			{
-				printf("%.*Lf\n", precision, powl(n1, 1.0L / n2));
+				n1 = strtold(sn1.c_str(), NULL);
+			}
+
+			if(sn2 == "lr")
+			{
+				n2 = result;
+			}
+
+			else if(sn2 == "pi")
+			{
+				n2 = PI_S_L;
+			}
+
+			else if(sn2 == "pim")
+			{
+				n2 = PI_M_L;
+			}
+
+			else if(sn2 == "pil")
+			{
+				n2 = PI_L_L;
+			}
+
+			else
+			{
+				n2 = strtold(sn2.c_str(), NULL);
+			}
+
+			printf("Result: %.*Lf √ %.*Lf = ", precision, n1, precision, n2);
+
+			if(n1 < 0.0L)
+			{
+				result = copysignl(powl(fabsl(n1), 1.0L / n2), n1);
+				printf("%.*Lf\n", precision, result);
+			}
+
+			else
+			{
+				result = powl(n1, 1.0L / n2);
+				printf("%.*Lf\n", precision, result);
 			}
 
 			petc();
