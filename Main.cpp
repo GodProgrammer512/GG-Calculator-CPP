@@ -13,7 +13,7 @@
 
 
 /* Main code: */
-int main(void)
+int main()
 {
 	/* Variables: */
 	#define GG_CALCULATOR_VERSION "1.0.0" /* Calculator version variable. */
