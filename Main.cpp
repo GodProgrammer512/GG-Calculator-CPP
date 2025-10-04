@@ -1,8 +1,8 @@
-// Run once time:
+/* Include guard: */
 #ifndef _GG_CALC_CPP_
 #define _GG_CALC_CPP_
 
-// Importations:
+/* Importations: */
 #define IMPORT_TERMINAL_COLORS
 #define IMPORT_MATH_UTILS
 #include <cutils.h>
@@ -12,27 +12,27 @@
 #include <cmath>
 
 
-// Main code:
+/* Main code: */
 int main(void)
 {
-	// Variables:
-	#define GG_CALCULATOR_VERSION "1.0.0" // Calculator version variable.
-	#define MIN_PRECISION 0               // Minimum precision variable.
-	#define MAX_PRECISION 18              // Maximum precision variable.
-	signed char loop1 = 1;                // First Loop variable.
-	signed int precision = 6;             // Precision variable.
-	long double n1;                       // First number variable.
-	long double n2;                       // Second number variable.
-	long double result = 0.0L;            // Result variable.
-	std::string option1;                  // First option variable.
-	std::string sn1;                      // First string number variable.
-	std::string sn2;                      // Second string number variable.
-	std::string sprecision;               // String precision variable.
+	/* Variables: */
+	#define GG_CALCULATOR_VERSION "1.0.0" /* Calculator version variable. */
+	#define MIN_PRECISION 0               /* Minimum precision variable. */
+	#define MAX_PRECISION 18              /* Maximum precision variable. */
+	signed char loop1 = 1;                /* First Loop variable. */
+	signed int precision = 6;             /* Precision variable. */
+	long double n1;                       /* First number variable. */
+	long double n2;                       /* Second number variable. */
+	long double result = 0.0L;            /* Result variable. */
+	std::string option1;                  /* First option variable. */
+	std::string sn1;                      /* First string number variable. */
+	std::string sn2;                      /* Second string number variable. */
+	std::string sprecision;               /* String precision variable. */
 
-	// Commands before main loop:
+	/* Commands before main loop: */
 	enable_vt_and_utf8();
 
-	// Main loop:
+	/* Main loop: */
 	while(loop1 == 1)
 	{
 		clear_terminal();
@@ -54,7 +54,7 @@ int main(void)
 		{
 			loop1 = 2;
 
-			// Second main loop:
+			/* Second main loop: */
 			while(loop1 == 2)
 			{
 				puts("=======================================");
