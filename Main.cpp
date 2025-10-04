@@ -80,7 +80,7 @@ int main(void)
 				else if(option1 == "2")
 				{
 					clear_terminal();
-					rrmf();
+					read_me();
 				}
 
 				else if(option1 == "3")
@@ -117,7 +117,7 @@ int main(void)
 
 		else if(option1 == "1")
 		{
-			printf("Type two numbers, both with space to sum it (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to sum it (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
@@ -177,7 +177,7 @@ int main(void)
 
 		else if(option1 == "2")
 		{
-			printf("Type two numbers, both with space to subtract it (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to subtract it (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
@@ -237,7 +237,7 @@ int main(void)
 
 		else if(option1 == "3")
 		{
-			printf("Type two numbers, both with space to multiply it (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to multiply it (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
@@ -297,7 +297,7 @@ int main(void)
 
 		else if(option1 == "4")
 		{
-			printf("Type two numbers, both with space to make a division (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to make a division (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
@@ -366,7 +366,7 @@ int main(void)
 
 		else if(option1 == "5")
 		{
-			printf("Type two numbers, both with space to elevate the left number (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to elevate the left number (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
@@ -426,7 +426,7 @@ int main(void)
 
 		else if(option1 == "6")
 		{
-			printf("Type two numbers, both with space to root the left number (last account result, %Lf): ", result);
+			printf("Type two numbers, both with space to root the left number (last account result, %.*Lf): ", precision, result);
 			std::cin >> std::ws >> sn1 >> sn2;
 
 			if(sn1 == "lr")
