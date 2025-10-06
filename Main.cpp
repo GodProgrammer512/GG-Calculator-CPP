@@ -16,18 +16,21 @@
 int main()
 {
 	/* Variables: */
-	#define GG_CALCULATOR_VERSION "1.0.0" /* Calculator version variable. */
-	#define MIN_PRECISION 0               /* Minimum precision variable. */
-	#define MAX_PRECISION 18              /* Maximum precision variable. */
-	signed char loop1 = 1;                /* First Loop variable. */
-	signed int precision = 6;             /* Precision variable. */
-	long double n1;                       /* First number variable. */
-	long double n2;                       /* Second number variable. */
-	long double result = 0.0L;            /* Result variable. */
-	std::string option1;                  /* First option variable. */
-	std::string sn1;                      /* First string number variable. */
-	std::string sn2;                      /* Second string number variable. */
-	std::string sprecision;               /* String precision variable. */
+	#define GG_CALCULATOR_FULL_VERSION  101L /* GG Calculator full version variable (1.0.1). */
+	#define GG_CALCULATOR_MAJOR_VERSION 1L   /* GG Calculator major version variable (1). */
+	#define GG_CALCULATOR_MINOR_VERSION 0L   /* GG Calculator minor version variable (0). */
+	#define GG_CALCULATOR_PATCH_VERSION 1L   /* GG Calculator patch version variable (1). */
+	#define MIN_PRECISION               0    /* Minimum precision variable. */
+	#define MAX_PRECISION               18   /* Maximum precision variable. */
+	signed char loop1 = 1;                   /* First Loop variable. */
+	signed int precision = 6;                /* Precision variable. */
+	long double n1;                          /* First number variable. */
+	long double n2;                          /* Second number variable. */
+	long double result = 0.0L;               /* Result variable. */
+	std::string option1;                     /* First option variable. */
+	std::string sn1;                         /* First string number variable. */
+	std::string sn2;                         /* Second string number variable. */
+	std::string sprecision;                  /* String precision variable. */
 
 	/* Commands before main loop: */
 	enable_vt_and_utf8();
@@ -35,9 +38,9 @@ int main()
 	/* Main loop: */
 	while(loop1 == 1)
 	{
-		clear_terminal();
+		CLEAR_TERMINAL();
 		puts("====================================");
-		printf("========= CALCULATOR %s =========\n", GG_CALCULATOR_VERSION);
+		printf("========= CALCULATOR %.0Lf.%.0Lf.%.0Lf. =========\n", GG_CALCULATOR_MAJOR_VERSION, GG_CALCULATOR_MINOR_VERSION, GG_CALCULATOR_PATCH_VERSION);
 		puts("====================================");
 		printf("  %s[ 0 ] Options...%s\n", RED_COLOR, BASE_TERMINAL);
 		puts("  [ 1 ] Addition accounts +");
@@ -48,7 +51,7 @@ int main()
 		puts("  [ 6 ] Rooted accounts √");
 		fputs("\t Your answer: ", stdout);
 		std::cin >> std::ws >> option1;
-		clear_terminal();
+		CLEAR_TERMINAL();
 
 		if(option1 == "0")
 		{
@@ -74,18 +77,18 @@ int main()
 
 				else if(option1 == "1")
 				{
-					loop1 = 0, clear_terminal();
+					loop1 = 0, CLEAR_TERMINAL();
 				}
 
 				else if(option1 == "2")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					read_me();
 				}
 
 				else if(option1 == "3")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					fputs("Type the new value to the precision (base: 6, min: 0, max: 18): ", stdout);
 					std::cin >> std::ws >> sprecision;
 
@@ -101,17 +104,17 @@ int main()
 						precision = MAX_PRECISION;
 					}
 
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 
 				else if(option1 == "3.14" || option1 == "3.1415" || option1 == "3.14159" || option1 == "3,14" || option1 == "3,1415" || option1 == "3,14159")
 				{
-					clear_terminal();
+					CLEAR_TERMINAL();
 					easter_egg_function();
-					clear_terminal();
+					CLEAR_TERMINAL();
 				}
 
-				clear_terminal();
+				CLEAR_TERMINAL();
 			}
 		}
 
