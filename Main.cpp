@@ -23,7 +23,7 @@ int main()
 	#define MIN_PRECISION               0      /* Minimum precision variable. */
 	#define MAX_PRECISION               18     /* Maximum precision variable. */
 	signed char loop1 = 1;                     /* First Loop variable. */
-	signed int precision = 6;                  /* Precision variable. */
+	signed int precision = 18;                 /* Precision variable. */
 	long double n1;                            /* First number variable. */
 	long double n2;                            /* Second number variable. */
 	long double result = 0.0L;                 /* Result variable. */
