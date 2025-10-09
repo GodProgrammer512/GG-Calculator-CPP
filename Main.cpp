@@ -1,6 +1,6 @@
 /* Include guard: */
-#ifndef _GG_CALC_CPP_
-#define _GG_CALC_CPP_
+#ifndef _GG_CALCULATOR_CPP_
+#define _GG_CALCULATOR_CPP_
 
 /* Importations: */
 #define IMPORT_TERMINAL_COLORS
